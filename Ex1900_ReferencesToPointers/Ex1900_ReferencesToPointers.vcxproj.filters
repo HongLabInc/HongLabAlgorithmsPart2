@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1901_Trie.cpp">
+    <ClCompile Include="Ex1900_ReferencesToPointers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
