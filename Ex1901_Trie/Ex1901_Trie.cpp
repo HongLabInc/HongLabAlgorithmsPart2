@@ -332,6 +332,7 @@ int main()
 {
 	// 기본 사례
 	{
+		// Trie에 추가할 단어들
 		vector<string> words = { "and", "ant", "do", "dad", "ball", "she", "shells" };
 
 		Trie trie;
@@ -341,6 +342,7 @@ int main()
 			trie.IterInsert(w, w + "_value"); //trie.Insert(w, w + "_value"); // _value는 디버깅을 위한 임시 값(value) (뒤에서는 사전의 내용)
 
 		// 모든 키 출력
+		// and ant ball dad do she shells <- 알파벳 순서로 정렬되어서 출력됩니다.
 		cout << "Keys()" << endl;
 		for (const auto& k : trie.Keys())
 			cout << k << " ";
@@ -352,6 +354,10 @@ int main()
 		cout << endl;
 
 		// 키 탐색
+		// do : do_value     <- do를 찾아서 do_value 출력
+		// dad : dad_value
+		// hello : Not found <- 삽입하지 않았기 때문에 찾지 못함
+
 		cout << "Search" << endl;
 		for (auto w : vector<string>{ "do", "dad", "hello" })
 		{
@@ -362,6 +368,7 @@ int main()
 		cout << endl;
 
 		// 특정 문자열로 시작하는 키 검색
+		// dad do <- "d"로 시작하는 단어들이 모두 출력
 		cout << "KeysWithPrefix()" << endl;
 		for (const auto& k : trie.KeysWithPrefix("d"))
 		{
@@ -371,13 +378,15 @@ int main()
 
 		// 앞 부분이 겹치는 가장 긴 단어 출력
 		cout << "LongestPrefixOf()" << endl;
-		cout << trie.LongestPrefixOf("she") << endl;
-		cout << trie.LongestPrefixOf("shell") << endl;
-		cout << trie.LongestPrefixOf("shellsort") << endl;
-		cout << trie.LongestPrefixOf("shallow") << endl;
+		cout << trie.LongestPrefixOf("she") << endl;       // she
+		cout << trie.LongestPrefixOf("shell") << endl;     // she
+		cout << trie.LongestPrefixOf("shellsort") << endl; // shells
+		cout << trie.LongestPrefixOf("shallow") << endl;   // 공백(찾지 못함)
 		cout << endl;
 
 		// 와일드카드(wildcard) ? 테스트
+		// ? 자리에 어떤 글자든지 들어갈 수 있음
+		// "an?" 에서 ? 자리가 각각 d와 t인 "and" 와 "ant" 출력
 		cout << "KeysThatMatch()" << endl;
 		for (const auto& k : trie.KeysThatMatch("an?"))
 		{
@@ -391,11 +400,11 @@ int main()
 		{
 			cout << "Delete: " << w << endl;
 			trie.Delete(w);
-			trie.Display2D();
+			trie.Display2D(); // 트리구조가 어떻게 달라지는 지 실행 예시에서 보세요
 		}
 		cout << endl << endl;
 
-		// 삭제 후 키 출력
+		// 삭제 후 키 출력 (삭제된 단어들은 출력되지 않음)
 		cout << "Keys() after Delete()" << endl;
 		for (const auto& k : trie.Keys())
 			cout << k << " ";
@@ -403,6 +412,12 @@ int main()
 	}
 
 	// 와일드카드 * 테스트
+	// * 자리에는 어떤 문자열이든지 들어갈 수 있습니다. 아무 글자도 들어가지 않을 수도 있습니다.
+	// 예시) "ab*cd"에서 *자리에 
+	//      아무 글자도 들어가지 않으면 abcd 
+	//      "1"이 들어가면 "ab1cd" 
+	//      "12"가 들어가면 "ab12cd" 
+	//      "123"이 들어가면 "ab123cd"
 	{
 		Trie trie;
 
@@ -417,7 +432,7 @@ int main()
 		cout << endl << endl;
 	}
 
-	// 영어 사전
+	// 영어 사전 (사전 파일을 읽어들이는 데에 시간이 약간 걸립니다.)
 	// run_dict();
 
 	return 0;
