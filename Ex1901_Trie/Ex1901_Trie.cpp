@@ -12,7 +12,7 @@ public:
 
 	struct Node
 	{
-		vector<Node*> children; // 다음 글자
+		vector<Node*> children; // 다음 글자에 대응하는 노드에 대한 포인터 (map<char, Node*> children; 으로도 구현 가능)
 		string value;           // 리프(leaf)가 아니어도 (자식이 있어도) 값 저장 가능
 
 		Node()
