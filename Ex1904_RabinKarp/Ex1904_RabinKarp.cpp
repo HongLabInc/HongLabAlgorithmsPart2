@@ -9,7 +9,7 @@ void RabinKarpMatcher(string pat, string txt, int d, int q)
 	int N = int(txt.size());
 
 	// 자주 사용되는 숫자를 미리 계산
-	// 여기서는 (((128 % q) * 128 % q) * 128 % q) * 128 % q 
+	// 여기서는 (128 % q) * 128 % q) * 128 % q
 	int h = 1;
 	for (int i = 0; i < M - 1; i++)
 		h = (h * d) % q;
