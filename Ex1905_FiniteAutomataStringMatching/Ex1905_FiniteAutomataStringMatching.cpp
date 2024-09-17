@@ -24,9 +24,9 @@ void ComputeTransitionFunction(string pat, vector<vector<int>>& TF) // TF refere
 
 			while (k > 0) // k == 0 이라면 한 글자도 매칭이 안되었다는 의미
 			{
-				// 문자열 연산 힌트 substr(), +=
+				// 문자열 연산 힌트 substr(), += char(x)
 				// string prefix = TODO;     // 패턴의 앞에서부터 k 글자
-				// string suffix = TODO; // 현재 상태로 오기위해 입력받은 문자열 + 새로운 글자의 뒷부분 k 글자
+				// string suffix = TODO;     // 현재 상태로 오기위해 입력받은 문자열 + 새로운 글자의 뒷부분 k 글자
 
 				//if (prefix == suffix)
 				//	break;
