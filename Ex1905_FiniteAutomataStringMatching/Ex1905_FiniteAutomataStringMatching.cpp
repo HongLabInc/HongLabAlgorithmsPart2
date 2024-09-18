@@ -26,7 +26,9 @@ void ComputeTransitionFunction(string pat, vector<vector<int>>& TF) // TF refere
 			{
 				// 문자열 연산 힌트 substr(), += char(x)
 				// string prefix = TODO;     // 패턴의 앞에서부터 k 글자
-				// string suffix = TODO;     // 현재 상태로 오기위해 입력받은 문자열 + 새로운 글자의 뒷부분 k 글자
+				// string suffix = TODO;     // [현재 상태로 오기위해 입력받은 문자열 + 새로운 글자]의 뒷부분 k 글자
+
+				// suffix는 여러 줄로 나눠서 구현하면 덜 헷갈립니다.
 
 				//if (prefix == suffix)
 				//	break;
@@ -41,14 +43,14 @@ void ComputeTransitionFunction(string pat, vector<vector<int>>& TF) // TF refere
 void PrintTransitionFunction(vector<vector<int>>& tf)
 {
 	cout << "   ";
-	for (char i = 'A'; i <= 'D'; i++)
+	for (char i = 'a'; i <= 'd'; i++) // 편의상 abcd에 대해서만 출력
 		cout << i;
 	cout << endl;
 
 	for (int s = 0; s < tf.size(); s++)
 	{
 		cout << s << "  ";
-		for (char i = 'A'; i <= 'D'; i++)
+		for (char i = 'a'; i <= 'd'; i++) // 편의상 abcd에 대해서만 출력
 			cout << tf[s][i];
 		cout << endl;
 	}
@@ -64,7 +66,6 @@ void FiniteAutomatonMatcher(string pat, string txt)
 	vector<vector<int>> tf(M + 1, vector<int>(d, 0)); // 모두 0으로 초기화 (엉뚱한 글자가 들어오면 첫 상태로 이동)
 
 	// tf[state][character] -> next state
-	// 그래프의 인접 행렬(adjacency matrix) 표현으로 생각할 수 있습니다.
 
 	ComputeTransitionFunction(pat, tf);
 
@@ -93,10 +94,10 @@ void FiniteAutomatonMatcher(string pat, string txt)
 
 int main()
 {
-	string txt = "AABAACAADAABAAABAA";
-	string pat = "AABA";
-	//string txt = "ABABABCABABABAB";
-	//string pat = "ABAB";
+	string txt = "aabaacaadaabaaabaa";
+	string pat = "aaba";
+	//string txt = "abababcabababab";
+	//string pat = "abab";
 
 	FiniteAutomatonMatcher(pat, txt); // 중복 매치 가능
 
