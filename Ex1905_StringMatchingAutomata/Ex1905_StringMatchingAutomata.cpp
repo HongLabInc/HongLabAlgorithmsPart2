@@ -16,6 +16,7 @@ void ComputeTransitionFunction(string pat, vector<vector<int>>& TF) // TF refere
 	// - pat[0]에서 pat[s-1]까지 순서대로 들어왔다면 상태 숫자는 s입니다.
 	// - 바꿔말하면 상태가 s번이라는 의미는 글자가 s개 매칭된 상태라는 의미입니다.
 	// - 상태의 가짓수는 패턴의 글자수보다 하나 더 많습니다. (하나도 매칭 안된 0번 상태 포함)
+	// - TF[state][x]는 상태s(= s개가 이미 매칭된 상태)에 추가로 x가 더 들어오는 경우를 의미합니다.
 
 	for (int state = 0; state <= M; ++state)     // 상태 state에서
 		for (int x = 32; x < d; ++x)             // 글자 x가 들어오면 (ASCII 32 미만은 패턴에 사용되지 않는다고 가정)
@@ -28,7 +29,10 @@ void ComputeTransitionFunction(string pat, vector<vector<int>>& TF) // TF refere
 				// string prefix = TODO;     // 패턴의 앞에서부터 k 글자
 				// string suffix = TODO;     // [현재 상태로 오기위해 입력받은 문자열 + 새로운 글자]의 뒷부분 k 글자
 
-				// suffix는 여러 줄로 나눠서 구현하면 덜 헷갈립니다.
+				// suffix를 3줄로 나눠서 구현하는 경우
+				// string suffix = TODO; // 현재 상태로 오기위해 입력받은 문자열
+				// suffix += TODO;       // 새로 들어올 글자 추가
+				// suffix = TODO;        // 입력 문자열의 뒤에서부터 k 글자
 
 				//if (prefix == suffix)
 				//	break;
