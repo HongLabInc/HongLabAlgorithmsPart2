@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{586400d4-8f3e-40fd-9cb6-07666845990e}</ProjectGuid>
-    <RootNamespace>Ex1905FiniteAutomataStringMatching</RootNamespace>
+    <ProjectGuid>{a31b5815-a1a6-49f7-9a3f-dc1d764e0727}</ProjectGuid>
+    <RootNamespace>Ex1905StringMatchingAutomata</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1905_FiniteAutomataStringMatching.cpp" />
+    <ClCompile Include="Ex1905_StringMatchingAutomata.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

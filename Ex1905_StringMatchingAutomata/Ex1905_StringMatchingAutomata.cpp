@@ -4,7 +4,7 @@
 using namespace std;
 
 // 아래 구현은 CLRS 4th p.974을 유사하게 이해하기 쉽도록 정리한 것입니다.
-// C 스타일의 보다 효율적인 구현은 아래 링크 참고하세요.
+// C 스타일의 보다 효율적인 구현은 아래 링크 참고하세요. (영상 밑에 해설 참고하세요)
 // https://www.geeksforgeeks.org/finite-automata-algorithm-for-pattern-searching/
 
 void ComputeTransitionFunction(string pat, vector<vector<int>>& TF) // TF reference
