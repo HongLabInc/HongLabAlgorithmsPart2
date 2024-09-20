@@ -57,6 +57,8 @@ void PrintTransitionFunction(vector<vector<int>>& tf)
 	cout << endl;
 }
 
+// Automaton은 automata의 단수형입니다.
+// 앞에 붙은 finite은 상태가 유한하다는 의미입니다.
 void FiniteAutomatonMatcher(string pat, string txt)
 {
 	int M = int(pat.size());
