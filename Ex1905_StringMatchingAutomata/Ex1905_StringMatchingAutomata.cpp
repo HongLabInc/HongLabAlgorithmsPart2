@@ -73,16 +73,18 @@ void FiniteAutomatonMatcher(string pat, string txt)
 
 	// tf[state][character] -> next state
 
-	ComputeTransitionFunction(pat, tf);
+	// 본격적인 매칭을 시작하기에 앞서서 전이함수 tf를 미리 만듭니다.
+	ComputeTransitionFunction(pat, tf); // txt 없이 패턴pat로만 만들 수 있습니다.
 
-	PrintTransitionFunction(tf);
+	PrintTransitionFunction(tf); // tf를 표로 출력, 디버깅에 활용하세요.
 
 	for (int i = 0; i < N; i++)
 		cout << i % 10;
 	cout << endl << txt << endl;
 
-	string record; // state 기록 디버깅용
+	string record; // state 기록, 디버깅용
 
+	// 준비된 tf를 이용해서 Theta(N)으로 매칭 진행
 	int state = 0;
 	for (int i = 0; i < N; i++)
 	{
