@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1904_RabinKarp", "Ex1904_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1905_StringMatchingAutomata", "Ex1905_StringMatchingAutomata\Ex1905_StringMatchingAutomata.vcxproj", "{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1906_TwoPointers", "Ex1906_TwoPointers\Ex1906_TwoPointers.vcxproj", "{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -73,6 +75,14 @@ Global
 		{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}.Release|x64.Build.0 = Release|x64
 		{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}.Release|x86.ActiveCfg = Release|Win32
 		{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}.Release|x86.Build.0 = Release|Win32
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Debug|x64.ActiveCfg = Debug|x64
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Debug|x64.Build.0 = Debug|x64
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Debug|x86.ActiveCfg = Debug|Win32
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Debug|x86.Build.0 = Debug|Win32
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Release|x64.ActiveCfg = Release|x64
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Release|x64.Build.0 = Release|x64
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Release|x86.ActiveCfg = Release|Win32
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +94,7 @@ Global
 		{E5A20768-BF68-478D-B4AE-D4A4948AFD51} = {261B7443-E30F-4243-9407-32E8C7DF4488}
 		{A94BE635-089F-446B-8AAD-CCEDF375F00B} = {261B7443-E30F-4243-9407-32E8C7DF4488}
 		{A31B5815-A1A6-49F7-9A3F-DC1D764E0727} = {261B7443-E30F-4243-9407-32E8C7DF4488}
+		{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC} = {261B7443-E30F-4243-9407-32E8C7DF4488}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6583679-0974-4A64-A552-A4DADB6FAA59}
