@@ -49,7 +49,7 @@ void KMPMatcher(string pat, string txt)
 	cout << endl << txt << endl;
 
 	int k = 0;
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < N; i++) // i가 0부터 시작합니다.
 	{
 		break; // TODO: 삭제
 
