@@ -90,9 +90,5 @@ int main()
 	string pat3 = "abab";
 	KMPMatcher(pat3, txt3);
 
-	string txt4 = "bacbababacabcbab";
-	string pat4 = "ababaca";
-	KMPMatcher(pat4, txt4);
-
 	return 0;
 }
