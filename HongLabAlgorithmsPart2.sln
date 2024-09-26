@@ -15,13 +15,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1903_SlidingWindow", "Ex1
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1904_RabinKarp", "Ex1904_RabinKarp\Ex1904_RabinKarp.vcxproj", "{A94BE635-089F-446B-8AAD-CCEDF375F00B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1905_StringMatchingAutomata", "Ex1905_StringMatchingAutomata\Ex1905_StringMatchingAutomata.vcxproj", "{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1906_StringMatchingAutomata", "Ex1906_StringMatchingAutomata\Ex1906_StringMatchingAutomata.vcxproj", "{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1906_TwoPointers", "Ex1906_TwoPointers\Ex1906_TwoPointers.vcxproj", "{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1907_TwoPointers", "Ex1907_TwoPointers\Ex1907_TwoPointers.vcxproj", "{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1907_ExplicitBackup", "Ex1907_ExplicitBackup\Ex1907_ExplicitBackup.vcxproj", "{D1F3C384-3B3D-4ECA-B0E5-BA1AFF951D5F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1908_ExplicitBackup", "Ex1908_ExplicitBackup\Ex1908_ExplicitBackup.vcxproj", "{D1F3C384-3B3D-4ECA-B0E5-BA1AFF951D5F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1908_KMP", "Ex1908_KMP\Ex1908_KMP.vcxproj", "{0D6EBACD-307E-40B9-BF17-A1140344FF94}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1909_KMP", "Ex1909_KMP\Ex1909_KMP.vcxproj", "{0D6EBACD-307E-40B9-BF17-A1140344FF94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

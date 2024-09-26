@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1906_TwoPointers.cpp">
+    <ClCompile Include="Ex1907_TwoPointers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
