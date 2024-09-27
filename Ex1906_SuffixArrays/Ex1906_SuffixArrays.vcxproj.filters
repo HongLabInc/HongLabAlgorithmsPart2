@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1910_BoyerMoore.cpp">
+    <ClCompile Include="Ex1906_SuffixArrays.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

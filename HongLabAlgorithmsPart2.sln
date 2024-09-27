@@ -11,21 +11,21 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1901_Trie", "Ex1901_Trie\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1902_NaiveStringMatching", "Ex1902_NaiveStringMatching\Ex1902_NaiveStringMatching.vcxproj", "{DF4CB5EE-060C-47FC-AA7F-177D2D5DFDE7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1903_SlidingWindow", "Ex1903_SlidingWindow\Ex1903_SlidingWindow.vcxproj", "{E5A20768-BF68-478D-B4AE-D4A4948AFD51}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1904_SlidingWindow", "Ex1904_SlidingWindow\Ex1904_SlidingWindow.vcxproj", "{E5A20768-BF68-478D-B4AE-D4A4948AFD51}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1904_RabinKarp", "Ex1904_RabinKarp\Ex1904_RabinKarp.vcxproj", "{A94BE635-089F-446B-8AAD-CCEDF375F00B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1905_RabinKarp", "Ex1905_RabinKarp\Ex1905_RabinKarp.vcxproj", "{A94BE635-089F-446B-8AAD-CCEDF375F00B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1906_StringMatchingAutomata", "Ex1906_StringMatchingAutomata\Ex1906_StringMatchingAutomata.vcxproj", "{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1907_StringMatchingAutomata", "Ex1907_StringMatchingAutomata\Ex1907_StringMatchingAutomata.vcxproj", "{A31B5815-A1A6-49F7-9A3F-DC1D764E0727}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1907_TwoPointers", "Ex1907_TwoPointers\Ex1907_TwoPointers.vcxproj", "{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1908_TwoPointers", "Ex1908_TwoPointers\Ex1908_TwoPointers.vcxproj", "{4B23B3F8-111F-4181-A6E0-2DDA52D73ACC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1908_ExplicitBackup", "Ex1908_ExplicitBackup\Ex1908_ExplicitBackup.vcxproj", "{D1F3C384-3B3D-4ECA-B0E5-BA1AFF951D5F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1909_ExplicitBackup", "Ex1909_ExplicitBackup\Ex1909_ExplicitBackup.vcxproj", "{D1F3C384-3B3D-4ECA-B0E5-BA1AFF951D5F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1909_KMP", "Ex1909_KMP\Ex1909_KMP.vcxproj", "{0D6EBACD-307E-40B9-BF17-A1140344FF94}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1910_KMP", "Ex1910_KMP\Ex1910_KMP.vcxproj", "{0D6EBACD-307E-40B9-BF17-A1140344FF94}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1905_SuffixArrays", "Ex1905_SuffixArrays\Ex1905_SuffixArrays.vcxproj", "{959A351C-B04F-4A4D-BF68-827FF21A952D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1906_SuffixArrays", "Ex1906_SuffixArrays\Ex1906_SuffixArrays.vcxproj", "{959A351C-B04F-4A4D-BF68-827FF21A952D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1910_BoyerMoore", "Ex1910_BoyerMoore\Ex1910_BoyerMoore.vcxproj", "{F686C2C1-B2A6-4A21-AE25-31A5D2016622}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1903_BoyerMoore", "Ex1903_BoyerMoore\Ex1903_BoyerMoore.vcxproj", "{F686C2C1-B2A6-4A21-AE25-31A5D2016622}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a94be635-089f-446b-8aad-ccedf375f00b}</ProjectGuid>
-    <RootNamespace>Ex1904RabinKarp</RootNamespace>
+    <ProjectGuid>{d1f3c384-3b3d-4eca-b0e5-ba1aff951d5f}</ProjectGuid>
+    <RootNamespace>Ex1907ExplicitBackup</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1904_RabinKarp.cpp" />
+    <ClCompile Include="Ex1909_ExplicitBackup.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

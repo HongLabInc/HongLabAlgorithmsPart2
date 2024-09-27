@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1908_ExplicitBackup.cpp">
+    <ClCompile Include="Ex1907_StringMatchingAutomata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

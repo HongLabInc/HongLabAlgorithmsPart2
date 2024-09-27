@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1905_SuffixArrays.cpp">
+    <ClCompile Include="Ex1904_SlidingWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

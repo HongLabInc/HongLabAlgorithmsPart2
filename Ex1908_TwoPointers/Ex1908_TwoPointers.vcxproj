@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0d6ebacd-307e-40b9-bf17-a1140344ff94}</ProjectGuid>
-    <RootNamespace>Ex1908KMP</RootNamespace>
+    <ProjectGuid>{4b23b3f8-111f-4181-a6e0-2dda52d73acc}</ProjectGuid>
+    <RootNamespace>Ex1906TwoPointers</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1909_KMP.cpp" />
+    <ClCompile Include="Ex1908_TwoPointers.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

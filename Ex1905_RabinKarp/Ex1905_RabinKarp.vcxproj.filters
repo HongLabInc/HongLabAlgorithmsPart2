@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex1903_SlidingWindow.cpp">
+    <ClCompile Include="Ex1905_RabinKarp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
