@@ -46,7 +46,7 @@ public:
 	{
 		return Select(root, k);
 	}
-	Node* Select(Node* n, int k) // n->size를 사용하는 방식 (쉬움)
+	Node* Select(Node* n, int k)
 	{
 		return nullptr;	// TODO: 
 	}
