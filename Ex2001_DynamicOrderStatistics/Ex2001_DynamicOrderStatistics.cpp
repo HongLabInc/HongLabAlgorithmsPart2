@@ -387,10 +387,7 @@ int main()
 	OrderStatisticTree bst;
 
 	// key를 추가하는 순서에 따라서 트리 구조가 달라집니다.
-	vector<int> keys = { 26, 17, 41, 14, 21, 30, 47, 10, 16, 19, 21, 28, 38, 7, 12, 14, 20, 35, 39, 3 };
-
-	//vector<int> keys(20);
-	//std::generate(keys.begin(), keys.end(), [&] { return dis(gen); });
+	vector<int> keys = { 26, 17, 41, 14, 21, 30, 47, 10, 16, 19 };
 
 	for (int key : keys)
 	{
