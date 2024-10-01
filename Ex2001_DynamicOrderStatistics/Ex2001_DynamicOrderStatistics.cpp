@@ -397,7 +397,7 @@ int main()
 
 	bst.Print2D();
 
-	sort(keys.begin(), keys.end());
+	sort(keys.begin(), keys.end()); // Search와 Rank()의 결과가 정확한지 확인할 때 사용
 
 	cout << "Rank: ";
 	for (int r = 1; r <= keys.size(); r++)
@@ -422,7 +422,7 @@ int main()
 		{
 			cout << setw(3) << temp->key;
 
-			if (keys[bst.Rank(temp->key) - 1] != temp->key)
+			if (keys[bst.Rank(temp->key) - 1] != temp->key) // Rank() 결과가 정확한지 확인
 			{
 				cout << "Wrong rank of " << temp->key << " , " << bst.Rank(temp->key) << " vs " << keys[bst.Rank(temp->key) - 1] << endl;
 				exit(-1);
