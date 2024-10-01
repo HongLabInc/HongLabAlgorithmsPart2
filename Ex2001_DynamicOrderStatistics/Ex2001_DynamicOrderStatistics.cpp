@@ -355,7 +355,7 @@ public:
 	void Print2D(Node* root) {
 		if (!root) cout << "Empty" << endl;
 		else {
-			int h = Height(root) + 1, w = 6 * int(pow(2, h - 1));
+			int h = max(5, Height(root) + 1), w = 6 * int(pow(2, h - 1));
 			screen.clear();
 			screen.resize(h * 2, string(w, ' '));
 			Print2D(root, w / 2 - 2, 0, h - 1);
@@ -388,6 +388,7 @@ int main()
 
 	// key를 추가하는 순서에 따라서 트리 구조가 달라집니다.
 	vector<int> keys = { 26, 17, 41, 14, 21, 30, 47, 10, 16, 19 };
+	// vector<int> keys = { 26, 17, 41, 14, 21, 30, 47, 10, 16, 19, 21, 28, 38, 7, 12, 14, 20, 35, 39, 3 };
 
 	for (int key : keys)
 	{
