@@ -26,7 +26,7 @@ public:
 	Value val;
 	Node* left;
 	Node* right;
-	int size; // Number of nodes in this subtree
+	int size;     // 이 노드를 루트로 하는 서브트리의 크기(노드의 수)
 	Color color;
 
 	Node(Key key, Value val, int N, Color color)

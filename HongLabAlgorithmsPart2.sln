@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter20", "Chapter20", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex2001_DynamicOrderStatistics", "Ex2001_DynamicOrderStatistics\Ex2001_DynamicOrderStatistics.vcxproj", "{76AC373B-692B-4CCA-8511-270DDE2F662F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex2002_IntervalTrees", "Ex2002_IntervalTrees\Ex2002_IntervalTrees.vcxproj", "{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -135,6 +137,14 @@ Global
 		{76AC373B-692B-4CCA-8511-270DDE2F662F}.Release|x64.Build.0 = Release|x64
 		{76AC373B-692B-4CCA-8511-270DDE2F662F}.Release|x86.ActiveCfg = Release|Win32
 		{76AC373B-692B-4CCA-8511-270DDE2F662F}.Release|x86.Build.0 = Release|Win32
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Debug|x64.ActiveCfg = Debug|x64
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Debug|x64.Build.0 = Debug|x64
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Debug|x86.ActiveCfg = Debug|Win32
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Debug|x86.Build.0 = Debug|Win32
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Release|x64.ActiveCfg = Release|x64
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Release|x64.Build.0 = Release|x64
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Release|x86.ActiveCfg = Release|Win32
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +162,7 @@ Global
 		{959A351C-B04F-4A4D-BF68-827FF21A952D} = {261B7443-E30F-4243-9407-32E8C7DF4488}
 		{F686C2C1-B2A6-4A21-AE25-31A5D2016622} = {261B7443-E30F-4243-9407-32E8C7DF4488}
 		{76AC373B-692B-4CCA-8511-270DDE2F662F} = {99FAED12-4097-4A26-9EB2-DE42B2457E24}
+		{FB42B6F9-3E3A-420B-8880-5F7D8671B1E1} = {99FAED12-4097-4A26-9EB2-DE42B2457E24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6583679-0974-4A64-A552-A4DADB6FAA59}
