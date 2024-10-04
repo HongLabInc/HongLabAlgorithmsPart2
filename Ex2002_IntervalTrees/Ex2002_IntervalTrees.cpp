@@ -74,7 +74,7 @@ public:
 		assert(l1 <= h1);
 		assert(l2 <= h2);
 
-		if (l1 <= h2 && l2 <= h1) return true;
+		// if ( TODO: ) return true;
 		return false;
 	}
 
