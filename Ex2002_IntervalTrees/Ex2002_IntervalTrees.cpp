@@ -107,7 +107,7 @@ public:
 		SearchAll(root, low, high, overlapped);
 
 		// 편의상 여기서 출력
-		cout << "[" << low << "," << high << "] overlaps:" << endl;
+		cout << "[" << low << "," << high << "] overlaps: ";
 		if (overlapped.empty()) cout << "None" << endl;
 		else
 		{
@@ -121,6 +121,7 @@ public:
 
 	// CLRS 3판 14.3-4, 4판 기준 17.3-3.
 	// https://sites.math.rutgers.edu/~ajl213/CLRS/Ch14.pdf (풀이에 오류 있음, right subtree의 low의 최소값은 n의 low 이상이어야 함)
+	// 풀이 그대로 하면 일부를 못 찾습니다.
 	void SearchAll(Node* n, int low, int high, vector<Node*>& overlapped)
 	{
 		assert(low <= high);
@@ -338,6 +339,7 @@ int main()
 		itree.SearchOne(22, 25); // [15,23]
 		itree.SearchOne(11, 14); // Not found
 
+		itree.SearchAll(22, 25); // [15,23] [25,30]
 		itree.SearchAll(0, 30);  // [16,21] [8,9] [5,8] [0,3] [6,10] [15,23] [25,30] [19,20] [17,19] [26,26] (전체 범위)
 		itree.SearchAll(15, 20); // [16,21] [15,23] [19,20] [17,19]
 		itree.SearchAll(5, 8);   // [8,9] [5,8] [6,10]
