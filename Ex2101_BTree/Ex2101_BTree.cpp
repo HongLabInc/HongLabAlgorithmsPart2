@@ -210,18 +210,18 @@ public:
 	}
 
 	// x->children[idx]가 최소 개수일 경우에는 더 줄일 수 없기 때문에
-	// 미리 갯수를 늘려줍니다.
+	// 미리 갯수를 늘려줍니다. Case 3
 	void Fill(Node* x, int idx)
 	{
-		// x->children[idx-1]에 여유가 있다면 거기서 가져옵니다.
+		// x->children[idx-1]에 여유가 있다면 거기서 가져옵니다. Case 3a
 		//if (idx != 0 && TODO: 조건)
 		//	BorrowFromPrev(x, idx);
 
-		//// x->children[idx+1]에 여유가 있다면 거기서 가져옵니다.
+		//// x->children[idx+1]에 여유가 있다면 거기서 가져옵니다. Case 3a
 		//else if (idx != x->n && TODO: 조건)
 		//	BorrowFromNext(x, idx);
 
-		//// 그 외의 경우에는 형제 노드와 합칩니다.
+		//// 그 외의 경우에는 형제 노드와 합칩니다. Case 3b
 		//// 위에서 형제들 x->children[idx - 1], x->children[idx + 1]이 크지 않다는 것을 확인했기 때문에 
 		//// 합쳐도 최대 조건을 넘지 않습니다.
 		//else
@@ -239,12 +239,12 @@ public:
 	{
 		int idx = FindKey(x, k);
 
-		//if (idx < x->n && TODO: 조건) // x에 k가 저장되어 있다면 바로 삭제
+		//if (idx < x->n && TODO: 조건) // x에 k가 저장되어 있는 경우
 		//{
 		//	if (x->leaf)
-		//		DeleteFromLeaf(x, idx);      // 리프노드에서 삭제
+		//		DeleteFromLeaf(x, idx);      // 리프노드에서 삭제, Case 1
 		//	else
-		//		DeleteFromNonLeaf(x, idx);   // 리프가 아닌 노드에서 삭제
+		//		DeleteFromNonLeaf(x, idx);   // 리프가 아닌 노드에서 삭제, Case 2
 		//}
 		//else
 		//{
@@ -274,7 +274,7 @@ public:
 		return;
 	}
 
-	void DeleteFromLeaf(Node* x, int idx) // 리프노드에서 삭제
+	void DeleteFromLeaf(Node* x, int idx) // 리프노드에서 삭제, Case 1
 	{
 		// idx보다 큰 것들을 하나씩 쉬프트 시켜서 idx 위치가 삭제된 효과 구현
 		for (int i = idx + 1; i < x->n; ++i)
@@ -291,7 +291,7 @@ public:
 
 		// 이 노드의 개수를 유지하기 위해서
 		// 삭제하려는 키보다 작은쪽의 서브트리와 바꿔치기하고 그 쪽에서 삭제하게 합니다.
-		// 자식 서브트리로 책임을 미루는 느낌입니다.
+		// 자식 서브트리로 책임을 미루는 느낌입니다. Case 2a
 		if (x->children[idx]->n >= t)
 		{
 			T_KEY pred = GetPred(x, idx);   // 바꿔치기할 값을 가져옵니다.
@@ -301,6 +301,7 @@ public:
 
 		// 이 노드의 개수를 유지하기 위해서
 		// 삭제하려는 키보다 큰쪽의 서브트리와 바꿔치기하고 그 쪽에서 삭제하게 합니다.
+		// 자식 서브트리로 책임을 미루는 느낌입니다. Case 2b
 		else if (x->children[idx + 1]->n >= t)
 		{
 			//TODO;        // 바꿔치기할 값을 가져옵니다.
@@ -310,7 +311,7 @@ public:
 
 		// 삭제할 k보다 작은 자식 노드와 큰 자식 노드 두 개를 합칩니다.
 		// 자식 노드 두 개가 합치는 과정에서 k가 새로 생긴 자식노드로 넘어갑니다.
-		// 그 다음에 그 노드에게 삭제하라고 시킵니다.
+		// 그 다음에 그 노드에게 삭제하라고 시킵니다. Case 2c
 		// 예시:
 		//[                                 P                           ]
 		// [      C,       G,       L      ] [         T,       X      ]
