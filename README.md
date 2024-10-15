@@ -18,8 +18,20 @@
 
 ## OpenCV 설치 안내
 - 챕터 22. 계산 기하 부터는 OpenCV가 필요합니다. 눈으로 보면서 결과를 확인하기 위해서입니다. OpenCV 자체를 공부하려는 의도는 아닙니다.
-- 윈도우즈: [vcpkg](https://github.com/microsoft/vcpkg) 설치 후 vcpkg install opencv:x64-windows
+- 윈도우즈: [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started-vs?pivots=shell-powershell) 설치 후 vcpkg install opencv:x64-windows
 - 맥OS: [Homebrew](https://brew.sh/) 설치 후 brew install opencv
+
+## VCPKG 설치 요약 (Windows 11)
+
+터미널(CMD, 파워쉘 등도 가능)에서 아래 순서로 설치하시면 Visual Studio 2022에서 알아서 OpenCV를 찾아서 사용합니다.
+```
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg
+.\bootstrap-vcpkg.bat
+.\vcpkg.exe install opencv:x64-windows
+.\vcpkg.exe integrate install
+'''
+
 
 ## 기타 주의 사항
 - 사용자 이름이나 폴더에 한글 사용 금지 (시간 낭비 방지 차원입니다.)
