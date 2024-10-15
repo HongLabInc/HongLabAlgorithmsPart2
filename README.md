@@ -30,8 +30,7 @@ cd vcpkg
 .\bootstrap-vcpkg.bat
 .\vcpkg.exe install opencv:x64-windows
 .\vcpkg.exe integrate install
-'''
-
+```
 
 ## 기타 주의 사항
 - 사용자 이름이나 폴더에 한글 사용 금지 (시간 낭비 방지 차원입니다.)
