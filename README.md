@@ -17,7 +17,9 @@
 - 맥에서 VSCode 사용 시에는 tasks.json에 "-std=c++17" 과 "${fileDirname}/*.cpp" 추가해주세요. ([샘플](https://github.com/HongLabInc/HongLabCppSummary/blob/main/.vscode_mac/tasks.json))
 
 ## OpenCV 설치 안내
-- 챕터 22. 계산 기하 부터는 OpenCV가 필요합니다. 눈으로 보면서 결과를 확인하기 위해서입니다. OpenCV 자체나 컴퓨터 비전을 공부하려는 의도는 아닙니다.
+- 챕터 22. 계산 기하 부터는 OpenCV가 필요합니다. 아래 설치 과정을 참고하세요.
+- OpenCV는 원래 컴퓨터 비전 라이브러리인데, 여기서는 공간 분할 알고리듬을 가시화는 용도로만 사용합니다.
+- OpenCV를 선택한 이유는 윈도우와 맥 모두 호환성 관리가 잘 되고 있고 AI 분야에서도 많이 사용되기 때문입니다.
 - 윈도우즈에서 [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started-vs?pivots=shell-powershell)를 이용한 설치
   - 터미널(CMD, 파워쉘 등도 가능)에서 아래 순서로 설치하시면 Visual Studio 2022에서 알아서 OpenCV를 찾아서 사용합니다.
 ```
