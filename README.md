@@ -35,7 +35,7 @@ cd vcpkg
   - 폴더 이름은 설치되는 OpenCV 버전에 따라 달라질 수 있습니다. 아래 예시에서는 4.9.0_12 버전입니다.
 ```
 brew install pkg-config
-brew install vcpkg
+brew install opencv
 settings.json에 아래와 같이 OpenCV 경로 추가
     "C_Cpp_Runner.linkerArgs": ["-L/opt/homebrew/Cellar/opencv/4.9.0_12/lib -lopencv_core -lopencv_highgui -lopencv_imgproc"],
     "C_Cpp_Runner.includePaths": [
