@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex2202_SegmentsIntersect", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex2203_ConvexHull", "Ex2203_ConvexHull\Ex2203_ConvexHull.vcxproj", "{6D57433E-B526-4C9F-9550-2C3CF8D59D28}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex2204_AnySegmentsIntersect", "Ex2204_AnySegmentsIntersect\Ex2204_AnySegmentsIntersect.vcxproj", "{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -189,6 +191,14 @@ Global
 		{6D57433E-B526-4C9F-9550-2C3CF8D59D28}.Release|x64.Build.0 = Release|x64
 		{6D57433E-B526-4C9F-9550-2C3CF8D59D28}.Release|x86.ActiveCfg = Release|Win32
 		{6D57433E-B526-4C9F-9550-2C3CF8D59D28}.Release|x86.Build.0 = Release|Win32
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Debug|x64.ActiveCfg = Debug|x64
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Debug|x64.Build.0 = Debug|x64
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Debug|x86.ActiveCfg = Debug|Win32
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Debug|x86.Build.0 = Debug|Win32
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Release|x64.ActiveCfg = Release|x64
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Release|x64.Build.0 = Release|x64
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Release|x86.ActiveCfg = Release|Win32
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -211,6 +221,7 @@ Global
 		{5F8E5D6E-7E2F-4F5E-919B-D45D27667416} = {DC1B4070-67A5-43C6-A9BB-E23E3FC2917B}
 		{1B97B148-6C76-4C96-89DF-92E42E00C56E} = {DC1B4070-67A5-43C6-A9BB-E23E3FC2917B}
 		{6D57433E-B526-4C9F-9550-2C3CF8D59D28} = {DC1B4070-67A5-43C6-A9BB-E23E3FC2917B}
+		{93C729B0-BCBB-4111-9B90-BAA42AB30AF9} = {DC1B4070-67A5-43C6-A9BB-E23E3FC2917B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6583679-0974-4A64-A552-A4DADB6FAA59}
