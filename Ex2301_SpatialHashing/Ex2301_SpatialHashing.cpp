@@ -65,9 +65,9 @@ int main(int argc, char** argv)
 		for (Point p : points)
 			cv::circle(image, p, 3, Scalar(200, 200, 200), -1, LINE_AA);
 
-		for (int c = std::max(0, int(reference.x / radius) - 1); c <= std::min(image.cols - 1, int(reference.x / radius) + 1); c++)
+		for (int c = max(0, int(reference.x / radius) - 1); c <= min(image.cols - 1, int(reference.x / radius) + 1); c++)
 		{
-			for (int r = std::max(0, int(reference.y / radius) - 1); r <= std::min(image.rows - 1, int(reference.y / radius) + 1); r++)
+			for (int r = max(0, int(reference.y / radius) - 1); r <= min(image.rows - 1, int(reference.y / radius) + 1); r++)
 			{
 				for (Point* p : uniform_grid[c][r]) // TODO: uniform_grid 대신에 hashmap을 사용하도록 수정
 				{

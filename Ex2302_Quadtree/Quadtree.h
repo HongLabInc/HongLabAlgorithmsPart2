@@ -37,6 +37,8 @@ namespace hlab
 			}
 
 			// [x, x + width - 1] x [y, y + height - 1] 범위
+			// 예) x = 4, y = 8, width = 12, height = 12
+			//     [4, 15] x [8, 19]
 
 			int x, y;
 			int width, height; // 보통 정사각형 사용
@@ -51,12 +53,13 @@ namespace hlab
 				return false;
 			}
 
+			// 참고: https://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
 			bool Intersect(Point p, int r) // p가 중심이고 반지름인 r과 이 노드 사각형이 닿는지 아닌지 검사
 			{
 				int closest_x = max(x, min(p.x, x + width));
 				int closest_y = max(y, min(p.y, y + height));
 
-				if (cv::norm(Point(closest_x, closest_y) - p) < r)
+				if (cv::norm(Point(closest_x, closest_y) - p) <= r)
 					return true;
 				else
 					return false;
@@ -108,6 +111,10 @@ namespace hlab
 
 		bool Insert(Node* n, Point p)
 		{
+			// 참고: 여기서는 딱 필요한 자식 노드 하나씩만 만들어서 내려가는 방식으로 구현되어 있습니다.
+			//      한 번 쪼갤때 자식을 항상 4개 모두 만드는 방식으로 구현할 수도 있습니다.
+			//      다음 예제에 나옵니다.
+
 			// 힌트: 연산자 우선순위 https://en.cppreference.com/w/cpp/language/operator_precedence
 			if (p.x < n->x || p.x >= n->x + n->width || p.y < n->y || p.y >= n->y + n->height)
 			{
