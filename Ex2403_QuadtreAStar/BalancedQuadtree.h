@@ -159,8 +159,8 @@ namespace hlab
 				for (Point& s : samples)
 				{
 					Node* adj = FindLeaf(s);
-					if (adj && adj->level < n->level - 1)
-						Insert(adj, s, n->level - 1, true);
+					if (adj && adj->level <= n->level)
+						Insert(adj, s, n->level, true);
 				}
 			}
 

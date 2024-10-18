@@ -246,7 +246,7 @@ public:
 			}
 			else
 			{
-				if (SegmentsIntersect(n->l.p1, n->l.p2, ray.p1, ray.p2)) // 선분-선분 교차일 경우 (연산 중복 있음, 제거할 수 있으면 제거)
+				if (SegmentsIntersect(n->l.p1, n->l.p2, ray.p1, ray.p2)) // 선분-선분 교차일 경우 
 				{
 					result = r;
 					return true;

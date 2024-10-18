@@ -208,11 +208,12 @@ int main(int argc, char** argv)
 	for (int i = 0; i < points.size(); i++)
 	{
 		// Euclidean distance가 의외로 잘 안됩니다.
-		// heur[i] = cv::norm(points[i] - points.back()); 
+		// heur[i] = cv::norm(points[i] - points.back());
 
 		// Manhattan distance
 		auto diff = points[i] - points.back(); // points.back()이 목적지
 		heur[i] = (abs(diff.x) + abs(diff.y)) * 1; // 뒤에 곱해지는 숫자에 따라서 결과가 달라집니다.
+		//heur[i] = max(abs(diff.x), abs(diff.y)) * 10; // // Chebyshev distance
 
 		for (int j = 0; j < points.size(); j++)
 		{

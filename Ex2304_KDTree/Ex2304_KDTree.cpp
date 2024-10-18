@@ -45,7 +45,7 @@ public:
 		{
 			auto m = v.begin() + v.size() / 2;
 
-			std::nth_element(v.begin(), m, v.end(), [&](const vector<int>& a, const vector<int>& b) {return a[d] < b[d]; }); // TODO: root의 d에 맞춰서 정렬
+			std::nth_element(v.begin(), m, v.end(), [&](const vector<int>& a, const vector<int>& b) {return a[d] < b[d]; });
 
 			vector<int> x = v[v.size() / 2];
 
@@ -240,7 +240,7 @@ int main()
 	//points.push_back({ 1300, 700 });
 	//points.push_back({ 1800, 300 });
 
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 10; i++)
 		points.push_back({ rand() % image.cols, rand() % image.rows });
 
 	// kd-tree에서는 임의의 차원(dimension)에 대해 구현하기 위해서
@@ -294,8 +294,8 @@ int main()
 
 		if (leaf)
 		{
-			auto minpos = leaf->minpos;
-			auto maxpos = leaf->maxpos;
+			vector<int> minpos = leaf->minpos;
+			vector<int> maxpos = leaf->maxpos;
 
 			if (leaf->d == 0)
 			{
@@ -318,12 +318,17 @@ int main()
 			cv::rectangle(image, r, kBrightGray, -1, LINE_AA);
 		}
 
-		for (auto* n : visited)
+		for (int i = 0; i < visited.size(); i++)
 		{
+			auto* n = visited[i];
+
 			if (n->d == 0)
 				cv::line(image, Point(n->data[0], n->minpos[1]), Point(n->data[0], n->maxpos[1]), Scalar(200, 200, 200), 1, LINE_AA);
 			else
 				cv::line(image, Point(n->minpos[0], n->data[1]), Point(n->maxpos[0], n->data[1]), Scalar(200, 200, 200), 1, LINE_AA);
+
+			// cv::putText(image, to_string(i), { n->data[0], n->data[1] }, cv::FONT_HERSHEY_SIMPLEX, 1, Scalar(30, 30, 30), 1, LINE_AA, true);
+
 		}
 
 		for (Point p : points)
@@ -346,7 +351,7 @@ int main()
 			cv::circle(image, Point(nearest[0], nearest[1]), 8, Scalar(0, 0, 0), -1, LINE_AA);
 		}
 
-		if (leaf) // 빨간 점은 leaf node의 점, 더 큰 검은 점은 가장 가까운 점 (둘이 일치하지 않을 수 있다는 것 강조)
+		if (leaf) // 빨간 점은 leaf node의 점, 더 큰 검은 점은 가장 가까운 점
 		{
 			cv::circle(image, Point(leaf->data[0], leaf->data[1]), 5, Scalar(100, 100, 255), -1, LINE_AA);
 		}
