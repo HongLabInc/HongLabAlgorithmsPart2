@@ -20,9 +20,12 @@ namespace hlab
 
 	// 자주 사용하는 색들 (주의: RGB 순서가 아니라 BGR 순서입니다.)
 	const Scalar kWhite = Scalar(255, 255, 255);
+	const Scalar kPureBlue = Scalar(255, 0, 0);
+	const Scalar kPureRed = Scalar(0, 0, 255);
 	const Scalar kRed = Scalar(97, 105, 255);
 	const Scalar kBlue = Scalar(255, 191, 0);
 	const Scalar kBlack = Scalar(30, 30, 30);
+	const Scalar kBrightGray = Scalar(200, 200, 200);
 
 	void mouse_callback(int is_event, int x, int y, int flags, void* userdata)
 	{
@@ -30,7 +33,6 @@ namespace hlab
 		// 우리가 수학시간에 많이 사용하는 좌표계는 왼쪽 아래가 (0, 0)이라서 
 		// 여기서는 위아래를 뒤집어주고 있습니다.
 		y = image.rows - y;
-
 
 		if (left_down == false && is_event == EVENT_LBUTTONDOWN) // 마우스 왼쪽 버튼이 눌렸을 때, 
 		{
