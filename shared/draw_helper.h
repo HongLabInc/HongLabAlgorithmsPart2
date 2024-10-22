@@ -12,11 +12,11 @@ namespace hlab
 	using namespace std;
 	using namespace cv;
 
-	Mat image;
+	Mat image;                         // 그림을 그리는 화면, 행렬(2차원 배열) 형식입니다.
 	vector<cv::Point*> movable_points; // 마우스로 클릭해서 움직일 수 있는 물체
-	bool left_down = false;    // 마우스 왼쪽 버튼이 눌렸는 지
-	bool update_flag = false;  // 클릭&드래그가 발생하면 true로 선택, 가시화에서 사용
-	Point* selected = nullptr; // 마우스 클릭으로 선택한 물체
+	bool left_down = false;            // 마우스 왼쪽 버튼이 눌렸는 지
+	bool update_flag = false;          // 클릭&드래그가 발생하면 true로 선택, 가시화에서 사용
+	Point* selected = nullptr;         // 마우스 클릭으로 선택한 물체
 
 	// 자주 사용하는 색들 (주의: RGB 순서가 아니라 BGR 순서입니다.)
 	const Scalar kWhite = Scalar(255, 255, 255);
@@ -30,7 +30,7 @@ namespace hlab
 	void mouse_callback(int is_event, int x, int y, int flags, void* userdata)
 	{
 		// 화면에 그려지는 이미지 좌표계는 왼쪽 위가 (0, 0)입니다. 
-		// 우리가 수학시간에 많이 사용하는 좌표계는 왼쪽 아래가 (0, 0)이라서 
+		// 우리가 수학시간에 사용하는 좌표계는 왼쪽 아래가 (0, 0)이라서 
 		// 여기서는 위아래를 뒤집어주고 있습니다.
 		y = image.rows - y;
 
@@ -77,7 +77,7 @@ namespace hlab
 		utils::logging::setLogLevel(utils::logging::LogLevel::LOG_LEVEL_SILENT);
 
 		namedWindow("HongLab Algorithms Part2");
-		setMouseCallback("HongLab Algorithms Part2", mouse_callback, NULL);
+		setMouseCallback("HongLab Algorithms Part2", mouse_callback, NULL); // 사용자가 마우스를 조작하면 OS를 통해서 mouse_callback()이 실행됩니다.
 
 		// OpenCV에서는 이미지도 행렬(row x column)입니다.
 		image = Mat(height, width, CV_8UC3, Scalar(255, 255, 255)); // 생성자에 height(rows), width(columns) 순서로 넣어줘야 합니다.

@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 			// 양수면 왼쪽, 음수면 오른쪽, 0이면 직선 위에
 			int cross = Direction(line_start, line_end, p);
 
-			Scalar color = cross == 0 ? kBlack : cross > 0.0 ? kRed : kBlue;
+			Scalar color = cross == 0 ? kBlack : cross > 0 ? kRed : kBlue;
 
 			cv::circle(image, p, 15, color, -1, LINE_AA);
 		}
