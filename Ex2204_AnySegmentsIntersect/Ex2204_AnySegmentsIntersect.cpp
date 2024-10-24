@@ -16,7 +16,7 @@ using namespace hlab;
 
 // 포인트
 // - 바로 위나 바로 아래의 직선을 닿지 않고 더 위나 더 아래의 직선과 만날 수는 없다.
-// - 주어진 선분들의 모든 쌍에 대해 비교를 하는 것은 느리기 때문에, 정렬을 통해 가까운 선분들끼리만 비교
+// - 주어진 선분들의 모든 쌍에 대해 교차 확인을 하는 것은 느리기 때문에, 정렬을 통해 가까운 선분들끼리만 비교
 // - 새로 추가를 할 때 선분과 점을 비교하면서 위치를 결정
 // - 개념은 그리 어렵지 않은데, 구현이 복잡
 
@@ -175,25 +175,25 @@ int main(int argc, char** argv)
 					{
 						//cout << (Direction(*s2->left, *s2->right, *s1->left) <= 0) << endl;
 
-						return Direction(*s2->left, *s2->right, *s1->left) <= 0;
+						return Direction(*s2->left, *s2->right, *s1->left) > 0;
 					}
 					else if (s1->right->is_event)
 					{
 						//cout << (Direction(*s2->left, *s2->right, *s1->right) <= 0) << endl;
 
-						return Direction(*s2->left, *s2->right, *s1->right) <= 0;
+						return Direction(*s2->left, *s2->right, *s1->right) > 0;
 					}
 					else if (s2->left->is_event)
 					{
 						//cout << (Direction(*s1->left, *s1->right, *s2->left) > 0) << endl;
 
-						return Direction(*s1->left, *s1->right, *s2->left) > 0;
+						return Direction(*s1->left, *s1->right, *s2->left) <= 0;
 					}
 					else // if (s2->right->is_event)
 					{
 						//cout << (Direction(*s1->left, *s1->right, *s2->right) > 0) << endl;
 
-						return Direction(*s1->left, *s1->right, *s2->right) > 0;
+						return Direction(*s1->left, *s1->right, *s2->right) <= 0;
 					}
 
 					// Direction() == 0인 경우는 여기서 고려할 필요 없음
@@ -205,14 +205,6 @@ int main(int argc, char** argv)
 
 			auto Above = [&](decltype(T.begin()) itr) -> Segment*
 				{
-					if (itr == T.begin()) return nullptr;
-					auto temp = std::prev(itr);
-					if (itr == T.end()) return nullptr;
-					return *temp;
-				};
-
-			auto Below = [&](decltype(T.begin()) itr) -> Segment*
-				{
 					if (itr == T.end()) return nullptr;
 
 					auto temp = std::next(itr);
@@ -222,11 +214,19 @@ int main(int argc, char** argv)
 						return *temp;
 				};
 
+			auto Below = [&](decltype(T.begin()) itr) -> Segment*
+				{
+					if (itr == T.begin()) return nullptr;
+					auto temp = std::prev(itr);
+					if (itr == T.end()) return nullptr;
+					return *temp;
+				};
+
 			for (EndPoint* p : point_pointers)
 			{
 				//cout << p->order << endl;
 				//for (auto& s : T)
-				//	cout << s->name << " ";
+				//	cout << s->name << " ";  // <- set안에 어떤 순서로 저장되어 있는지 확인 가능, 먼저 출력되는 선분이 아래 방향
 				//cout << endl;
 
 				if (p->is_left)
