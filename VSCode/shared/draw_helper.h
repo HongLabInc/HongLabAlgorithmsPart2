@@ -27,6 +27,7 @@ namespace hlab
 	const Scalar kBlack = Scalar(30, 30, 30);
 	const Scalar kBrightGray = Scalar(200, 200, 200);
 
+	// 강의 영상에서 사용하는 드래그 방식 (점이나 화살표를 클릭 후 드래그로 이동)
 	void mouse_callback(int is_event, int x, int y, int flags, void* userdata)
 	{
 		// 화면에 그려지는 이미지 좌표계는 왼쪽 위가 (0, 0)입니다. 
@@ -36,7 +37,7 @@ namespace hlab
 
 		if (left_down == false && is_event == EVENT_LBUTTONDOWN) // 마우스 왼쪽 버튼이 눌렸을 때, 
 		{
-			//cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
+			// cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
 
 			left_down = true;
 
@@ -58,6 +59,8 @@ namespace hlab
 		}
 		else if (is_event == EVENT_LBUTTONUP)
 		{
+			// cout << "Left button up" << endl;
+
 			left_down = false;
 			selected = nullptr;
 			update_flag = false;
@@ -71,6 +74,54 @@ namespace hlab
 			}
 		}
 	}
+
+	// 맥에서는 아래 mouse_callback이 훨씬 바릅니다.
+	// 클릭 후에 마우스 버튼을 계속 누르고 있지 않아도 드래그처럼 작동합니다.
+	// 마우스 버튼을 다시 누르면 선택이 해제됩니다.
+	//void mouse_callback(int is_event, int x, int y, int flags, void* userdata)
+	//{
+	//	// 화면에 그려지는 이미지 좌표계는 왼쪽 위가 (0, 0)입니다. 
+	//	// 우리가 수학시간에 많이 사용하는 좌표계는 왼쪽 아래가 (0, 0)이라서 
+	//	// 여기서는 위아래를 뒤집어주고 있습니다.
+	//	y = image.rows - y;
+
+
+	//	if (is_event == EVENT_LBUTTONDOWN) // 마우스 왼쪽 버튼이 눌렸을 때, 
+	//	{
+	//		//cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
+
+	//		if (left_down == false)
+	//		{
+	//			left_down = true;
+
+	//			for (auto* p : movable_points)
+	//			{
+	//				if (cv::norm(*p - cv::Point(x, y)) < 15.0) // 눌린 물체가 뭔지를 찾아서 
+	//				{
+	//					selected = p;                          // 포인터를 selected에 저장
+	//					break;
+	//				}
+	//			}
+
+	//			if (selected != nullptr)
+	//				*selected = cv::Point(x, y);
+	//		}
+	//		else
+	//		{
+	//			left_down = false;
+	//			selected = nullptr;
+	//			update_flag = false;
+	//		}
+	//	}
+	//	else if (is_event == EVENT_MOUSEMOVE)
+	//	{
+	//		if (left_down && selected != nullptr) // 선택된 물체 이동
+	//		{
+	//			*selected = cv::Point(x, y);
+	//			update_flag = true; // 좌표가 바뀐 물체가 있는지를 가시화하는 부분에서 확인할 때 사용
+	//		}
+	//	}
+	//}
 
 	void initialize(int width, int height)
 	{
