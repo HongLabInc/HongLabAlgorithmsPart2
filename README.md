@@ -40,7 +40,12 @@ settings.json에 아래와 같이 OpenCV 경로 추가
     "C_Cpp_Runner.linkerArgs": ["-L/opt/homebrew/Cellar/opencv/4.10.0_12/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs"],
     "C_Cpp_Runner.includePaths": [
     "/opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4"],
+    ...
+    "C_Cpp_Runner.enableWarnings": false, <- 워닝이 너무 많아서 불편할 경우
 ```
+
+- 맥OS OpenCV GUI 반응 속도가 너무 느릴 경우 해결 방법
+  - draw_helper.h 파일 속의 mouse_callback() 함수를 아래쪽에 주석처리된 것으로 교체하세요.
 
 - 참고로 맥에서 XCode 사용할 때도 비슷하게 경로를 설정해주시면 됩니다.
   - Search Paths에서 Header Search Paths, Library Search Paths 설정
