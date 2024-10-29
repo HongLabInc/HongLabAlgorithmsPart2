@@ -4,6 +4,7 @@
 #include <vector>
 #include <iomanip>
 #include <set>
+#include <cstring> // strcmp()
 using namespace std;
 
 class SuffixArray

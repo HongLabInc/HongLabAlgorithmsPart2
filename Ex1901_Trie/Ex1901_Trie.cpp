@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 
 // Sedgewick Algorithm 5.4 Trie symbol table
