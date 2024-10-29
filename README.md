@@ -14,7 +14,7 @@
 ## 예제 사용 방법
 - Visual Studio 2022 설정 제공 (HongLabAlgorithmsPart2.sln 파일 실행)
 - Visual Studio Code는 VSCode 폴더 사용 ([VSCode 사용법](https://youtu.be/uDq7woPOZ_A?si=3qoGEBENHcFFOttB))
-- 맥에서 VSCode 사용 시에는 tasks.json에 "-std=c++17" 과 "${fileDirname}/*.cpp" 추가해주세요. ([샘플](https://github.com/HongLabInc/HongLabCppSummary/blob/main/.vscode_mac/tasks.json))
+- 맥에서 VSCode 사용 시에는 tasks.json에 "-std=c++17" 과 "${fileDirname}/*.cpp" 추가해주세요. ([샘플](https://github.com/HongLabInc/HongLabCppSummary/blob/main/.vscode_mac/tasks.json), 코드러너 사용시에는 불필요)
 
 ## OpenCV 설치 안내
 - 챕터 22. 계산 기하 부터는 OpenCV가 필요합니다. 아래 설치 과정을 참고하세요.
@@ -32,14 +32,14 @@ cd vcpkg
 
 - 맥OS에서 [Homebrew](https://brew.sh/)를 이용한 설치
   - 터미널에서 아래 순서로 설치하고 VS의 settings.json 수정
-  - 폴더 이름은 설치되는 OpenCV 버전에 따라 달라질 수 있습니다. 아래 예시에서는 4.9.0_12 버전입니다.
+  - 폴더 이름은 설치되는 OpenCV 버전에 따라 달라질 수 있습니다. 아래 예시에서는 4.10.0_12 버전입니다.
 ```
 brew install pkg-config
 brew install opencv
 settings.json에 아래와 같이 OpenCV 경로 추가
-    "C_Cpp_Runner.linkerArgs": ["-L/opt/homebrew/Cellar/opencv/4.9.0_12/lib -lopencv_core -lopencv_highgui -lopencv_imgproc"],
+    "C_Cpp_Runner.linkerArgs": ["-L/opt/homebrew/Cellar/opencv/4.10.0_12/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs"],
     "C_Cpp_Runner.includePaths": [
-    "/opt/homebrew/Cellar/opencv/4.9.0_12/include/opencv4"],
+    "/opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4"],
 ```
 
 - 참고로 맥에서 XCode 사용할 때도 비슷하게 경로를 설정해주시면 됩니다.
