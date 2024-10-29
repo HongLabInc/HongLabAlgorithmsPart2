@@ -44,8 +44,9 @@ settings.json에 아래와 같이 OpenCV 경로 추가
     "C_Cpp_Runner.enableWarnings": false, <- 워닝이 너무 많아서 불편할 경우
 ```
 
-- 맥OS OpenCV GUI 반응 속도가 너무 느릴 경우 해결 방법
+- 맥에서 터치패드 사용시 OpenCV GUI 반응 속도가 너무 느릴 경우 해결 방법
   - draw_helper.h 파일 속의 mouse_callback() 함수를 아래쪽에 주석처리된 것으로 교체하세요.
+  - 또는 외장 마우스를 연결해서 사용
 
 - 참고로 맥에서 XCode 사용할 때도 비슷하게 경로를 설정해주시면 됩니다.
   - Search Paths에서 Header Search Paths, Library Search Paths 설정
