@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream> 
 #include <opencv2/core/core.hpp> 
@@ -12,13 +12,13 @@ namespace hlab
 	using namespace std;
 	using namespace cv;
 
-	Mat image;                         // ±×¸²À» ±×¸®´Â È­¸é, Çà·Ä(2Â÷¿ø ¹è¿­) Çü½ÄÀÔ´Ï´Ù.
-	vector<cv::Point*> movable_points; // ¸¶¿ì½º·Î Å¬¸¯ÇØ¼­ ¿òÁ÷ÀÏ ¼ö ÀÖ´Â ¹°Ã¼
-	bool left_down = false;            // ¸¶¿ì½º ¿ŞÂÊ ¹öÆ°ÀÌ ´­·È´Â Áö
-	bool update_flag = false;          // Å¬¸¯&µå·¡±×°¡ ¹ß»ıÇÏ¸é true·Î ¼±ÅÃ, °¡½ÃÈ­¿¡¼­ »ç¿ë
-	Point* selected = nullptr;         // ¸¶¿ì½º Å¬¸¯À¸·Î ¼±ÅÃÇÑ ¹°Ã¼
+	Mat image;                         // ê·¸ë¦¼ì„ ê·¸ë¦¬ëŠ” í™”ë©´, í–‰ë ¬(2ì°¨ì› ë°°ì—´) í˜•ì‹ì…ë‹ˆë‹¤.
+	vector<cv::Point*> movable_points; // ë§ˆìš°ìŠ¤ë¡œ í´ë¦­í•´ì„œ ì›€ì§ì¼ ìˆ˜ ìˆëŠ” ë¬¼ì²´
+	bool left_down = false;            // ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ì´ ëˆŒë ¸ëŠ” ì§€
+	bool update_flag = false;          // í´ë¦­&ë“œë˜ê·¸ê°€ ë°œìƒí•˜ë©´ trueë¡œ ì„ íƒ, ê°€ì‹œí™”ì—ì„œ ì‚¬ìš©
+	Point* selected = nullptr;         // ë§ˆìš°ìŠ¤ í´ë¦­ìœ¼ë¡œ ì„ íƒí•œ ë¬¼ì²´
 
-	// ÀÚÁÖ »ç¿ëÇÏ´Â »öµé (ÁÖÀÇ: RGB ¼ø¼­°¡ ¾Æ´Ï¶ó BGR ¼ø¼­ÀÔ´Ï´Ù.)
+	// ìì£¼ ì‚¬ìš©í•˜ëŠ” ìƒ‰ë“¤ (ì£¼ì˜: RGB ìˆœì„œê°€ ì•„ë‹ˆë¼ BGR ìˆœì„œì…ë‹ˆë‹¤.)
 	const Scalar kWhite = Scalar(255, 255, 255);
 	const Scalar kPureBlue = Scalar(255, 0, 0);
 	const Scalar kPureRed = Scalar(0, 0, 255);
@@ -29,12 +29,12 @@ namespace hlab
 
 	void mouse_callback(int is_event, int x, int y, int flags, void* userdata)
 	{
-		// È­¸é¿¡ ±×·ÁÁö´Â ÀÌ¹ÌÁö ÁÂÇ¥°è´Â ¿ŞÂÊ À§°¡ (0, 0)ÀÔ´Ï´Ù. 
-		// ¿ì¸®°¡ ¼öÇĞ½Ã°£¿¡ »ç¿ëÇÏ´Â ÁÂÇ¥°è´Â ¿ŞÂÊ ¾Æ·¡°¡ (0, 0)ÀÌ¶ó¼­ 
-		// ¿©±â¼­´Â À§¾Æ·¡¸¦ µÚÁı¾îÁÖ°í ÀÖ½À´Ï´Ù.
+		// í™”ë©´ì— ê·¸ë ¤ì§€ëŠ” ì´ë¯¸ì§€ ì¢Œí‘œê³„ëŠ” ì™¼ìª½ ìœ„ê°€ (0, 0)ì…ë‹ˆë‹¤. 
+		// ìš°ë¦¬ê°€ ìˆ˜í•™ì‹œê°„ì— ì‚¬ìš©í•˜ëŠ” ì¢Œí‘œê³„ëŠ” ì™¼ìª½ ì•„ë˜ê°€ (0, 0)ì´ë¼ì„œ 
+		// ì—¬ê¸°ì„œëŠ” ìœ„ì•„ë˜ë¥¼ ë’¤ì§‘ì–´ì£¼ê³  ìˆìŠµë‹ˆë‹¤.
 		y = image.rows - y;
 
-		if (left_down == false && is_event == EVENT_LBUTTONDOWN) // ¸¶¿ì½º ¿ŞÂÊ ¹öÆ°ÀÌ ´­·ÈÀ» ¶§, 
+		if (left_down == false && is_event == EVENT_LBUTTONDOWN) // ë§ˆìš°ìŠ¤ ì™¼ìª½ ë²„íŠ¼ì´ ëˆŒë ¸ì„ ë•Œ, 
 		{
 			//cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
 
@@ -42,9 +42,9 @@ namespace hlab
 
 			for (auto* p : movable_points)
 			{
-				if (cv::norm(*p - cv::Point(x, y)) < 15.0) // ´­¸° ¹°Ã¼°¡ ¹ºÁö¸¦ Ã£¾Æ¼­ 
+				if (cv::norm(*p - cv::Point(x, y)) < 15.0) // ëˆŒë¦° ë¬¼ì²´ê°€ ë­”ì§€ë¥¼ ì°¾ì•„ì„œ 
 				{
-					selected = p;                          // Æ÷ÀÎÅÍ¸¦ selected¿¡ ÀúÀå
+					selected = p;                          // í¬ì¸í„°ë¥¼ selectedì— ì €ì¥
 					break;
 				}
 			}
@@ -64,10 +64,10 @@ namespace hlab
 		}
 		else if (is_event == EVENT_MOUSEMOVE)
 		{
-			if (left_down && selected != nullptr) // ¼±ÅÃµÈ ¹°Ã¼ ÀÌµ¿
+			if (left_down && selected != nullptr) // ì„ íƒëœ ë¬¼ì²´ ì´ë™
 			{
 				*selected = cv::Point(x, y);
-				update_flag = true; // ÁÂÇ¥°¡ ¹Ù²ï ¹°Ã¼°¡ ÀÖ´ÂÁö¸¦ °¡½ÃÈ­ÇÏ´Â ºÎºĞ¿¡¼­ È®ÀÎÇÒ ¶§ »ç¿ë
+				update_flag = true; // ì¢Œí‘œê°€ ë°”ë€ ë¬¼ì²´ê°€ ìˆëŠ”ì§€ë¥¼ ê°€ì‹œí™”í•˜ëŠ” ë¶€ë¶„ì—ì„œ í™•ì¸í•  ë•Œ ì‚¬ìš©
 			}
 		}
 	}
@@ -77,20 +77,20 @@ namespace hlab
 		utils::logging::setLogLevel(utils::logging::LogLevel::LOG_LEVEL_SILENT);
 
 		namedWindow("HongLab Algorithms Part2");
-		setMouseCallback("HongLab Algorithms Part2", mouse_callback, NULL); // »ç¿ëÀÚ°¡ ¸¶¿ì½º¸¦ Á¶ÀÛÇÏ¸é OS¸¦ ÅëÇØ¼­ mouse_callback()ÀÌ ½ÇÇàµË´Ï´Ù.
+		setMouseCallback("HongLab Algorithms Part2", mouse_callback, NULL); // ì‚¬ìš©ìê°€ ë§ˆìš°ìŠ¤ë¥¼ ì¡°ì‘í•˜ë©´ OSë¥¼ í†µí•´ì„œ mouse_callback()ì´ ì‹¤í–‰ë©ë‹ˆë‹¤.
 
-		// OpenCV¿¡¼­´Â ÀÌ¹ÌÁöµµ Çà·Ä(row x column)ÀÔ´Ï´Ù.
-		image = Mat(height, width, CV_8UC3, Scalar(255, 255, 255)); // »ı¼ºÀÚ¿¡ height(rows), width(columns) ¼ø¼­·Î ³Ö¾îÁà¾ß ÇÕ´Ï´Ù.
+		// OpenCVì—ì„œëŠ” ì´ë¯¸ì§€ë„ í–‰ë ¬(row x column)ì…ë‹ˆë‹¤.
+		image = Mat(height, width, CV_8UC3, Scalar(255, 255, 255)); // ìƒì„±ìì— height(rows), width(columns) ìˆœì„œë¡œ ë„£ì–´ì¤˜ì•¼ í•©ë‹ˆë‹¤.
 	}
 
 	void preframe()
 	{
-		image = kWhite; // È­¸éÀ» Èò»öÀ¸·Î ÃÊ±âÈ­. »õ·Î Áö¿ì°í ½ÃÀÛÇÏ´Â °³³äÀÔ´Ï´Ù.
+		image = kWhite; // í™”ë©´ì„ í°ìƒ‰ìœ¼ë¡œ ì´ˆê¸°í™”. ìƒˆë¡œ ì§€ìš°ê³  ì‹œì‘í•˜ëŠ” ê°œë…ì…ë‹ˆë‹¤.
 	}
 
-	bool postframe() // Á¾·áÇÒ ¶§°¡ µÇ¸é true¸¦ ¹İÈ¯ÇÕ´Ï´Ù.
+	bool postframe() // ì¢…ë£Œí•  ë•Œê°€ ë˜ë©´ trueë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
 	{
-		cv::flip(image, image, 0); // ¿ŞÂÊ ¾Æ·¡°¡ (0, 0)ÀÌ µÇµµ·Ï À§¾Æ·¡¸¦ µÚÁı¾î Áİ´Ï´Ù.
+		cv::flip(image, image, 0); // ì™¼ìª½ ì•„ë˜ê°€ (0, 0)ì´ ë˜ë„ë¡ ìœ„ì•„ë˜ë¥¼ ë’¤ì§‘ì–´ ì¤ë‹ˆë‹¤.
 
 		imshow("HongLab Algorithms Part2", image);
 

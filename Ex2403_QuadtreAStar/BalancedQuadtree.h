@@ -1,11 +1,11 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 #include <list>
 #include <assert.h>
 #include <iostream>
 #include <set>
-#include <opencv2/core/core.hpp> // cv::Point »ç¿ë
+#include <opencv2/core/core.hpp> // cv::Point ì‚¬ìš©
 
 namespace hlab
 {
@@ -14,7 +14,7 @@ namespace hlab
 	class BalancedQuadtree
 	{
 	public:
-		using Point = cv::Point; // º°µµÀÇ Point ±¸Á¶Ã¼¸¦ ¸¸µé ¼ö ÀÖÀ¸³ª, ¿©±â¼­´Â ÆíÀÇ»ó OpenCV Point »ç¿ë (Å« Â÷ÀÌ ¾ø¾î¿ä)
+		using Point = cv::Point; // ë³„ë„ì˜ Point êµ¬ì¡°ì²´ë¥¼ ë§Œë“¤ ìˆ˜ ìˆìœ¼ë‚˜, ì—¬ê¸°ì„œëŠ” í¸ì˜ìƒ OpenCV Point ì‚¬ìš© (í° ì°¨ì´ ì—†ì–´ìš”)
 
 		struct Node
 		{
@@ -29,14 +29,14 @@ namespace hlab
 				// children[3] : right top child
 			}
 
-			// [x, x + width - 1] ¹üÀ§
+			// [x, x + width - 1] ë²”ìœ„
 
 			int x, y;
-			int width, height; // º¸Åë Á¤»ç°¢Çü »ç¿ë
+			int width, height; // ë³´í†µ ì •ì‚¬ê°í˜• ì‚¬ìš©
 			int level;
 			int index;
 			vector<Node*> children;
-			set<Node*> neighbors; // ¸®ÇÁ ³ëµåµé¸¸ Æ÷ÇÔ
+			set<Node*> neighbors; // ë¦¬í”„ ë…¸ë“œë“¤ë§Œ í¬í•¨
 			list<Point> objects;
 
 			bool HasChild()
@@ -100,7 +100,7 @@ namespace hlab
 			if (n->level == max_level)
 				return;
 
-			if (!n->children[0]) // ¾ÆÁ÷ ÀÚ½Ä ³ëµå°¡ ¾ø´Ù¸é 4°³ ¸ğµÎ »ı¼º (0¹ø¸¸ Ã¼Å©)
+			if (!n->children[0]) // ì•„ì§ ìì‹ ë…¸ë“œê°€ ì—†ë‹¤ë©´ 4ê°œ ëª¨ë‘ ìƒì„± (0ë²ˆë§Œ ì²´í¬)
 			{
 				n->children[0] = new Node(n->x, n->y, n->width / 2, n->height / 2, n->level + 1);
 				n->children[1] = new Node(n->x + n->width / 2, n->y, n->width / 2, n->height / 2, n->level + 1);
@@ -121,18 +121,18 @@ namespace hlab
 
 			bool result = Insert(root, p, max_level, split_only);
 
-			// cout << (result ? "added" : "not added") << endl; // µğ¹ö±ë¿ë
+			// cout << (result ? "added" : "not added") << endl; // ë””ë²„ê¹…ìš©
 
 			return result;
 		}
 
-		bool Insert(Node* n, Point p, int target_level, bool split_only) // split_only = trueÀÌ¸é ÂÉ°³±â¸¸ ÇÏ°í point¸¦ Ãß°¡ÇÏÁö´Â ¾ÊÀ½
+		bool Insert(Node* n, Point p, int target_level, bool split_only) // split_only = trueì´ë©´ ìª¼ê°œê¸°ë§Œ í•˜ê³  pointë¥¼ ì¶”ê°€í•˜ì§€ëŠ” ì•ŠìŒ
 		{
-			// ÈùÆ®: ¿¬»êÀÚ ¿ì¼±¼øÀ§ https://en.cppreference.com/w/cpp/language/operator_precedence
+			// íŒíŠ¸: ì—°ì‚°ì ìš°ì„ ìˆœìœ„ https://en.cppreference.com/w/cpp/language/operator_precedence
 			if (p.x < n->x || p.x >= n->x + n->width || p.y < n->y || p.y >= n->y + n->height)
 			{
 				// cout << "Not included " << p.x << " " << p.y << endl;
-				return false; // ¿µ¿ªÀ» ¹ş¾î³ª±â ¶§¹®¿¡ Á¶±â Á¾·á
+				return false; // ì˜ì—­ì„ ë²—ì–´ë‚˜ê¸° ë•Œë¬¸ì— ì¡°ê¸° ì¢…ë£Œ
 			}
 
 			if (n->level == target_level) // leaf node
@@ -143,14 +143,14 @@ namespace hlab
 				return true;
 			}
 
-			if (!n->children[0]) // ¾ÆÁ÷ ÀÚ½Ä ³ëµå°¡ ¾ø´Ù¸é 4°³ ¸ğµÎ »ı¼º (0¹ø¸¸ Ã¼Å©)
+			if (!n->children[0]) // ì•„ì§ ìì‹ ë…¸ë“œê°€ ì—†ë‹¤ë©´ 4ê°œ ëª¨ë‘ ìƒì„± (0ë²ˆë§Œ ì²´í¬)
 			{
 				n->children[0] = new Node(n->x, n->y, n->width / 2, n->height / 2, n->level + 1);
 				n->children[1] = new Node(n->x + n->width / 2, n->y, n->width / 2, n->height / 2, n->level + 1);
 				n->children[2] = new Node(n->x, n->y + n->height / 2, n->width / 2, n->height / 2, n->level + 1);
 				n->children[3] = new Node(n->x + n->width / 2, n->y + n->height / 2, n->width / 2, n->height / 2, n->level + 1);
 
-				// ÀÌ¿ô ³ëµå¿ÍÀÇ ¹ë·±½º ¸ÂÃçÁÖ±â
+				// ì´ì›ƒ ë…¸ë“œì™€ì˜ ë°¸ëŸ°ìŠ¤ ë§ì¶°ì£¼ê¸°
 				vector<Point> samples =
 				{
 					{n->x - 1, n->y - 1}, {n->x + n->width, n->y + n->height}, {n->x - 1, n->y + n->height}, {n->x + n->width, n->y - 1},
@@ -190,7 +190,7 @@ namespace hlab
 			if (p.x < n->x || p.x >= n->x + n->width || p.y < n->y || p.y >= n->y + n->height)
 			{
 				// cout << "Not included " << p.x << " " << p.y << endl;
-				return nullptr; // ¿µ¿ªÀ» ¹ş¾î³ª±â ¶§¹®¿¡ Á¶±â Á¾·á
+				return nullptr; // ì˜ì—­ì„ ë²—ì–´ë‚˜ê¸° ë•Œë¬¸ì— ì¡°ê¸° ì¢…ë£Œ
 			}
 
 			if (n->HasChild())
@@ -220,7 +220,7 @@ namespace hlab
 			FindNeighbors(root);
 		}
 
-		void FindNeighbors(Node* n) // ¸®ÇÁ ³ëµåµéÀÇ ÀÌ¿ôµéÀ» Ã£´Â´Ù.
+		void FindNeighbors(Node* n) // ë¦¬í”„ ë…¸ë“œë“¤ì˜ ì´ì›ƒë“¤ì„ ì°¾ëŠ”ë‹¤.
 		{
 			if (n->children[0])
 			{
@@ -232,7 +232,7 @@ namespace hlab
 				n->index = int(leaves.size());
 				leaves.push_back(n);
 
-				// ÁÖÀÇ: È­¸é ÇØ»óµµ ´ëºñ max_levelÀÌ ³Ê¹« Å©¸é ÇÑ ³ëµåÀÇ Å©±â°¡ ³Ê¹« ÀÛ¾ÆÁ®¼­ ¹®Á¦°¡ »ı±é´Ï´Ù.
+				// ì£¼ì˜: í™”ë©´ í•´ìƒë„ ëŒ€ë¹„ max_levelì´ ë„ˆë¬´ í¬ë©´ í•œ ë…¸ë“œì˜ í¬ê¸°ê°€ ë„ˆë¬´ ì‘ì•„ì ¸ì„œ ë¬¸ì œê°€ ìƒê¹ë‹ˆë‹¤.
 				vector<Point> samples = {
 					{n->x - 1, n->y - 1}, {n->x + n->width, n->y + n->height}, {n->x - 1, n->y + n->height}, {n->x + n->width, n->y - 1},
 					{n->x - 1, n->y}, {n->x, n->y - 1},{n->x + n->width, n->y}, {n->x, n->y + n->height}

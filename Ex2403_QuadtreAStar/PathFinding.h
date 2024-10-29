@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <queue>
 #include <iomanip>
@@ -66,15 +66,15 @@ namespace hlab
 			heuristics = heur;
 
 			dist[start_vertex] = 0.0;
-			pq = decltype(pq)(); // pq = priority_queue<pair<double, int>, vector<pair<double, int>>, greater<pair<double, int>>>(); // ÃÊ±âÈ­
-			pq.push(pair<double, int>{ 0.0 + heuristics[start_vertex], start_vertex }); // ÃÊ±âÈ­¸¸ ¿©±â¼­ ÇÏ°í ½ÇÁ¦ ÁøÇàÀº Update() È£ÃâÇÒ ¶§¸¶´Ù ÇÑ ´Ü°è¾¿ ÁøÇà
+			pq = decltype(pq)(); // pq = priority_queue<pair<double, int>, vector<pair<double, int>>, greater<pair<double, int>>>(); // ì´ˆê¸°í™”
+			pq.push(pair<double, int>{ 0.0 + heuristics[start_vertex], start_vertex }); // ì´ˆê¸°í™”ë§Œ ì—¬ê¸°ì„œ í•˜ê³  ì‹¤ì œ ì§„í–‰ì€ Update() í˜¸ì¶œí•  ë•Œë§ˆë‹¤ í•œ ë‹¨ê³„ì”© ì§„í–‰
 
 			end_vertex = _end_vertex;
 		}
 
-		void Update() // ¾Ö´Ï¸ŞÀÌ¼Ç È¿°ú¸¦ À§ÇØ ÇÑ ¹ø¿¡ ÇÏ³ªÀÇ Á¤Á¡¸¸ Ã³¸®
+		void Update() // ì• ë‹ˆë©”ì´ì…˜ íš¨ê³¼ë¥¼ ìœ„í•´ í•œ ë²ˆì— í•˜ë‚˜ì˜ ì •ì ë§Œ ì²˜ë¦¬
 		{
-			if (visited[end_vertex] == true) return; // end_vertex±îÁö Ã£¾ÒÀ» °æ¿ì ´õ Ã£Áö ¾ÊÀ½
+			if (visited[end_vertex] == true) return; // end_vertexê¹Œì§€ ì°¾ì•˜ì„ ê²½ìš° ë” ì°¾ì§€ ì•ŠìŒ
 
 			if (!pq.empty())
 			{
@@ -163,9 +163,9 @@ namespace hlab
 		}
 
 	public:
-		vector<int> prev;     // ÃÖ´Ü °æ·Î ±â·Ï
-		vector<double> dist;  // °Å¸® ±â·Ï
-		vector<bool> visited; // ¹æ¹®Çß´ÂÁö ±â·Ï
+		vector<int> prev;     // ìµœë‹¨ ê²½ë¡œ ê¸°ë¡
+		vector<double> dist;  // ê±°ë¦¬ ê¸°ë¡
+		vector<bool> visited; // ë°©ë¬¸í–ˆëŠ”ì§€ ê¸°ë¡
 		vector<double> heuristics;
 		int end_vertex = -1;
 

@@ -1,10 +1,10 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 #include <list>
 #include <assert.h>
 #include <iostream>
-#include <opencv2/core/core.hpp> // cv::Point »ç¿ë
+#include <opencv2/core/core.hpp> // cv::Point ì‚¬ìš©
 
 namespace hlab
 {
@@ -13,7 +13,7 @@ namespace hlab
 	class Quadtree
 	{
 	public:
-		using Point = cv::Point; // º°µµÀÇ Point ±¸Á¶Ã¼¸¦ ¸¸µé ¼ö ÀÖÀ¸³ª, ¿©±â¼­´Â ÆíÀÇ»ó OpenCV Point »ç¿ë (Å« Â÷ÀÌ ¾ø¾î¿ä)
+		using Point = cv::Point; // ë³„ë„ì˜ Point êµ¬ì¡°ì²´ë¥¼ ë§Œë“¤ ìˆ˜ ìˆìœ¼ë‚˜, ì—¬ê¸°ì„œëŠ” í¸ì˜ìƒ OpenCV Point ì‚¬ìš© (í° ì°¨ì´ ì—†ì–´ìš”)
 
 		//struct Point
 		//{
@@ -36,12 +36,12 @@ namespace hlab
 				// children[3] : right top child
 			}
 
-			// [x, x + width - 1] x [y, y + height - 1] ¹üÀ§
-			// ¿¹) x = 4, y = 8, width = 12, height = 12
+			// [x, x + width - 1] x [y, y + height - 1] ë²”ìœ„
+			// ì˜ˆ) x = 4, y = 8, width = 12, height = 12
 			//     [4, 15] x [8, 19]
 
 			int x, y;
-			int width, height; // º¸Åë Á¤»ç°¢Çü »ç¿ë
+			int width, height; // ë³´í†µ ì •ì‚¬ê°í˜• ì‚¬ìš©
 			int level;
 			vector<Node*> children;
 			list<Point> objects;
@@ -53,8 +53,8 @@ namespace hlab
 				return false;
 			}
 
-			// Âü°í: https://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
-			bool Intersect(Point p, int r) // p°¡ Áß½ÉÀÌ°í ¹İÁö¸§ÀÎ r°ú ÀÌ ³ëµå »ç°¢ÇüÀÌ ´ê´ÂÁö ¾Æ´ÑÁö °Ë»ç
+			// ì°¸ê³ : https://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
+			bool Intersect(Point p, int r) // pê°€ ì¤‘ì‹¬ì´ê³  ë°˜ì§€ë¦„ì¸ rê³¼ ì´ ë…¸ë“œ ì‚¬ê°í˜•ì´ ë‹¿ëŠ”ì§€ ì•„ë‹Œì§€ ê²€ì‚¬
 			{
 				int closest_x = max(x, min(p.x, x + width));
 				int closest_y = max(y, min(p.y, y + height));
@@ -111,16 +111,16 @@ namespace hlab
 
 		bool Insert(Node* n, Point p)
 		{
-			// Âü°í: ¿©±â¼­´Â µü ÇÊ¿äÇÑ ÀÚ½Ä ³ëµå ÇÏ³ª¾¿¸¸ ¸¸µé¾î¼­ ³»·Á°¡´Â ¹æ½ÄÀ¸·Î ±¸ÇöµÇ¾î ÀÖ½À´Ï´Ù.
-			//      ÇÑ ¹ø ÂÉ°¶¶§ ÀÚ½ÄÀ» Ç×»ó 4°³ ¸ğµÎ ¸¸µå´Â ¹æ½ÄÀ¸·Î ±¸ÇöÇÒ ¼öµµ ÀÖ½À´Ï´Ù.
-			//      ´ÙÀ½ ¿¹Á¦¿¡ ³ª¿É´Ï´Ù.
+			// ì°¸ê³ : ì—¬ê¸°ì„œëŠ” ë”± í•„ìš”í•œ ìì‹ ë…¸ë“œ í•˜ë‚˜ì”©ë§Œ ë§Œë“¤ì–´ì„œ ë‚´ë ¤ê°€ëŠ” ë°©ì‹ìœ¼ë¡œ êµ¬í˜„ë˜ì–´ ìˆìŠµë‹ˆë‹¤.
+			//      í•œ ë²ˆ ìª¼ê°¤ë•Œ ìì‹ì„ í•­ìƒ 4ê°œ ëª¨ë‘ ë§Œë“œëŠ” ë°©ì‹ìœ¼ë¡œ êµ¬í˜„í•  ìˆ˜ë„ ìˆìŠµë‹ˆë‹¤.
+			//      ë‹¤ìŒ ì˜ˆì œì— ë‚˜ì˜µë‹ˆë‹¤.
 
-			// ÈùÆ®: ¿¬»êÀÚ ¿ì¼±¼øÀ§ https://en.cppreference.com/w/cpp/language/operator_precedence
+			// íŒíŠ¸: ì—°ì‚°ì ìš°ì„ ìˆœìœ„ https://en.cppreference.com/w/cpp/language/operator_precedence
 			if (p.x < n->x || p.x >= n->x + n->width || p.y < n->y || p.y >= n->y + n->height)
 			{
 				cout << "Not included " << p.x << " " << p.y << endl;
 
-				return false; // ¿µ¿ªÀ» ¹ş¾î³ª±â ¶§¹®¿¡ ´õ ÁøÇàÇÏÁö ¾Ê°í Á¶±â Á¾·á
+				return false; // ì˜ì—­ì„ ë²—ì–´ë‚˜ê¸° ë•Œë¬¸ì— ë” ì§„í–‰í•˜ì§€ ì•Šê³  ì¡°ê¸° ì¢…ë£Œ
 			}
 
 			if (n->level == max_level) // leaf node
@@ -130,7 +130,7 @@ namespace hlab
 			}
 			else if (p.y < n->y + n->height / 2)
 			{
-				return false; // TODO: »èÁ¦
+				return false; // TODO: ì‚­ì œ
 
 				//if (p.x < n->x + n->width / 2)
 				//{
@@ -149,7 +149,7 @@ namespace hlab
 			}
 			else
 			{
-				return false; // TODO: »èÁ¦
+				return false; // TODO: ì‚­ì œ
 
 				//if (p.x < n->x + n->width / 2)
 				//{
