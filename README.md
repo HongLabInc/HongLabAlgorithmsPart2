@@ -37,7 +37,7 @@ cd vcpkg
 brew install pkg-config
 brew install opencv
 settings.json에 아래와 같이 OpenCV 경로 추가
-    "C_Cpp_Runner.linkerArgs": ["-L/opt/homebrew/Cellar/opencv/4.10.0_12/lib -lopencv_core -lopencv_highgui -lopencv_imgproc"],
+    "C_Cpp_Runner.linkerArgs": ["-L/opt/homebrew/Cellar/opencv/4.10.0_12/lib -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs"],
     "C_Cpp_Runner.includePaths": [
     "/opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4"],
 ```
