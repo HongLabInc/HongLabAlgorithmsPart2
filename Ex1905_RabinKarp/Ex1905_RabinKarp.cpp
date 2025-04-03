@@ -56,7 +56,7 @@ int main()
 	int d = 128; // ASCII 코드의 가짓수
 
 	// q는 d*q를 작게 만들 적당한 소수(prime number)
-	int q = 997; // 이 숫자가 작으면 surous hit이 자주 발생, 해시 충돌과 비슷한 상황
+	int q = 997; // 이 숫자가 작으면 spurious hit이 자주 발생, 해시 충돌과 비슷한 상황
 
 	// 문제 설명을 위한 출력
 	{
