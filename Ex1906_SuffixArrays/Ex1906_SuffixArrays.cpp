@@ -54,7 +54,7 @@ public:
 		{
 			int mid = l + (r - l) / 2;
 
-			int compare = strcmp(&txt.c_str()[sa[mid]], pat.c_str()); // 힌트로 사용하세요
+			int compare = strncmp(&txt.c_str()[sa[mid]], pat.c_str(), pat.size()); // 힌트로 사용하세요
 
 			// std::strcmp https://en.cppreference.com/w/cpp/string/byte/strcmp
 
