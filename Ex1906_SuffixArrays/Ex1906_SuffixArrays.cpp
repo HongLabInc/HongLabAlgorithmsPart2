@@ -56,8 +56,6 @@ public:
 
 			int compare = strncmp(&txt.c_str()[sa[mid]], pat.c_str(), pat.size()); // 힌트로 사용하세요
 
-			// std::strcmp https://en.cppreference.com/w/cpp/string/byte/strcmp
-
 			if (compare == 0)
 			{
 				// 매칭되는 순서대로 출력하기 위해 set에 저장해서 정렬했다가 출력
